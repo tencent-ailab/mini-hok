@@ -1,0 +1,12 @@
+syntax = "proto2";
+
+import "hero.proto";
+import "scene.proto";
+
+message FrameState    //帧状态
+{
+  required int32 frameNo = 1;      //当前帧号
+  repeated HeroState hero_states = 2;  //英雄状态组
+  repeated Bullet bullets = 3;    //子弹状态组
+}
+

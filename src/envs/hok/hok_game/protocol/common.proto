@@ -1,0 +1,118 @@
+syntax = "proto2"; //用于proto3.x编译时兼容proto2.x
+
+enum ActorType
+{
+  ACTOR_HERO = 0;            // 英雄
+  ACTOR_MONSTER = 1;         //怪物
+  ACTOR_BULLET = 5;          // 子弹
+
+}
+
+enum PlayerCamp
+{
+  PlayerCamp_1 = 1;  // 阵营1
+  PlayerCamp_2 = 2;  // 阵营2
+}
+
+enum ObjBehaviMode
+{
+  State_Idle = 0;    // 待机状态
+  State_Dead = 1;    // 死亡状态
+  Direction_Move = 2;  // 普通方向移动
+  Destination_Move = 3;  // 普通终点移动
+  Normal_Attack = 4;  // 按下普通攻击键的模式
+  Attack_Move = 5;  // A方式移动
+  Attack_Path = 6;  // 沿路径攻击
+  Attack_Lock = 7;  // 锁定目标攻击
+  UseSkill_0 = 8;    // 使用技能0（普通攻击）
+  UseSkill_1 = 9;    // 使用技能1
+  UseSkill_2 = 10;  // 使用技能2
+  UseSkill_3 = 11;  // 使用技能3
+  UseSkill_5 = 12;  // 使用天赋技能
+  State_GameOver = 13;  // 战斗结束
+
+}
+
+
+enum SkillSlotType
+{
+  SLOT_SKILL_0 = 0;  // 普通攻击技能
+  SLOT_SKILL_1 = 1;  // 技能1
+  SLOT_SKILL_2 = 2;  // 技能2
+  SLOT_SKILL_3 = 3;  // 技能3
+  SLOT_SKILL_4 = 4;  // 技能4
+  SLOT_SKILL_5 = 5;  // 技能5
+  SLOT_SKILL_6 = 6;  // 技能6
+}
+
+enum ProtectType
+{
+  PROTECT_NONE = 0;              // 占位
+  PROTECT_PHYSHURT = 1;            // 物理护盾
+  PROTECT_MAGICHURT = 2;            // 法术护盾
+  PROTECT_ALL = 3;              // 物理、法术护盾
+  PROTECT_ALL_INCLUDE_REALHURT = 4;      // 物理、法术、真实伤害护盾
+
+}
+
+message VInt3  //3维向量
+{
+  required int32 x = 1;
+  required int32 y = 2;
+  required int32 z = 3;
+}
+
+message ActorValue
+{
+  required int32 phy_atk = 1;        //物理攻击
+  required int32 phy_def = 2;        //物理防御
+  required int32 mgc_atk = 3;        //魔法攻击
+  required int32 mgc_def = 4;        //魔法防御
+  required int32 mov_spd = 5;        //移动速度
+  required int32 atk_spd = 6;        //攻速加成
+  required int32 ep = 7;          //当前能量
+  required int32 max_ep = 8;        //最大能量
+  required int32 hp_recover = 9;      //生命回复
+  required int32 ep_recover = 10;      //能量回复
+  required int32 phy_armor_hurt = 11;    //物理护甲穿透
+  required int32 mgc_armor_hurt = 12;    //魔法护甲穿透
+  required int32 crit_rate = 13;      //爆击率
+  required int32 crit_effe = 14;      //爆击效果
+  required int32 phy_vamp = 15;      //物理吸血
+  required int32 mgc_vamp = 16;      //魔法吸血
+  required int32 cd_reduce = 17;      //冷却缩减
+  required int32 ctrl_reduce = 18;    //韧性
+
+}
+
+message ActorState
+{
+  required int32 config_id = 1;        //配置档ID
+  required int32 runtime_id = 2;      //运行时id
+  optional ActorType actor_type = 3;  //Actor主类型
+  required PlayerCamp camp = 4;    //所属阵营
+  optional ObjBehaviMode behav_mode = 5;  //当前行为状态
+  required VInt3 location = 6;      //位置
+  required int32 hp = 7;          //当前生命
+  required int32 max_hp = 8;        //最大生命
+  optional ActorValue values = 9;    //数值属性
+  required int32 attack_range = 10;    //普攻范围
+  required int32 attack_target = 11;    //攻击目标runtime_id
+  repeated HitTargetInfo hit_target_info = 12;  // 命中的目标
+  repeated HurtHeroInfo hurt_hero_info = 13;    // 对英雄伤害
+}
+
+message HitTargetInfo
+{
+  optional int32 hit_target = 1;      // 命中的目标
+  optional uint32 skill_id = 2;      // 技能id
+  optional SkillSlotType slot_type = 3;  // 技能槽位
+}
+
+message HurtHeroInfo
+{
+  optional int32 hurt_target = 1;      // 伤害的英雄
+  optional uint32 hurt = 2;        // 伤害
+}
+
+

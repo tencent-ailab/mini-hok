@@ -1,0 +1,13 @@
+syntax = "proto2"; //用于proto3.x编译时兼容proto2.x
+
+import "common.proto";
+
+message Bullet  //场景中的子弹
+{
+  required int32 runtime_id = 1;      //运行时id
+  optional PlayerCamp camp = 2;      //所属阵营
+  required int32 source_actor = 3;    //源actorID
+  optional SkillSlotType slot_type = 4;  //施放技能槽
+  required int32 skill_id = 5;      //所属技能
+  required VInt3 location = 6;      //当前位置
+}

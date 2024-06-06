@@ -1,0 +1,71 @@
+syntax = "proto2"; //用于proto3.x编译时兼容proto2.x
+
+import "common.proto";
+
+message MoveToPos  //指向目标移动命令参数
+{
+  required VInt3 destPos = 1;  //目标位置
+}
+
+message AttackCommon          //普通攻击命令参数
+{
+  required uint32 actorID = 1;    //目标actorID
+  required int32 start = 2;      //1：普攻按下，0：普攻抬起
+}
+
+message ObjSkill        //目标性技能命令参数
+{
+  required uint32 skillID = 1;    //技能id
+  required uint32 actorID = 2;    //目标actorID
+  required SkillSlotType slotType = 3;//施放技能槽
+}
+
+message DirSkill        //方向性技能命令参数
+{
+  required uint32 skillID = 1;    //技能ID
+  required uint32 actorID = 2;    //切换目标ID
+  required SkillSlotType slotType = 3;//施放技能槽
+  required int32 degree = 4;      //施法角度
+}
+
+message PosSkill        //位置性技能命令参数
+{
+  required uint32 skillID = 1;    //技能ID
+  required VInt3 destPos = 2;      //目标位置
+  required SkillSlotType slotType = 3;//施放技能槽
+}
+
+message TalentSkill    //天赋技能参数
+{
+  optional int32 degree = 1;      //目标角度
+  required uint32 actorID = 2;    //目标actorID
+  
+}
+enum CommandType
+{
+  COMMAND_TYPE_None = 0;          //无动作
+  COMMAND_TYPE_MovePos = 1;       // 指定目标移动
+  COMMAND_TYPE_AttackCommon = 2;    // 普通攻击
+  COMMAND_TYPE_ObjSkill = 3;      // 对目标施法
+  COMMAND_TYPE_DirSkill = 4;      // 方向性施法
+  COMMAND_TYPE_PosSkill = 5;      // 对位置施法
+  COMMAND_TYPE_TalentSkill = 6;   // 召唤师技能
+
+}
+
+message CmdPkg
+{
+  required CommandType command_type = 1;    //命令类型
+  optional MoveToPos move_pos = 2;      //指向目标移动参数
+  optional AttackCommon attack_common = 3;  //普通攻击命令参数
+  optional ObjSkill obj_skill = 4;      //目标性技能命令参数
+  optional DirSkill dir_skill = 5;      //方向性技能命令参数
+  optional PosSkill pos_skill = 6;      //位置性技能命令参数
+  optional TalentSkill talent_skill = 7;      //召唤师技能
+}
+
+message AICommandInfo
+{
+  required int32 actor_id = 1;
+  optional CmdPkg  cmd_info = 2;
+}

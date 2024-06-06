@@ -1,0 +1,8 @@
+{
+    "battlesrv_port": 5558,
+    "endpoint": "10.244.4.216:3030",
+    "ugc_project_id": 400,
+    "level_name": "PVE_1_1",
+    "retry_times": 10,
+    "retry_sleep_seconds": 1
+}

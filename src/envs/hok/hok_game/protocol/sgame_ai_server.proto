@@ -1,0 +1,26 @@
+syntax = "proto2"; // 用于proto3.x编译时兼容proto2.x
+
+import "command.proto";
+import "sgame_state.proto";
+
+message StepFrameReq
+{
+  required FrameState frame_state = 1;    // 当前帧数据
+}
+
+message StepFrameRsp
+{
+  repeated AICommandInfo    cmd_list = 1;     // 本次需要执行指令
+  optional int32            gameover_ai_server = 2;  // server主动结束本局游戏
+}
+
+message FightStartReq {
+}
+message FightStartRsp {
+}
+
+message FightOverReq {
+  optional int32            gameover_state=1;
+}
+message FightOverRsp {
+}

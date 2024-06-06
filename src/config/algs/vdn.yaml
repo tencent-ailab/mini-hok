@@ -1,0 +1,36 @@
+# --- VDN specific parameters ---
+
+# use epsilon greedy action selector
+action_selector: "epsilon_greedy"
+epsilon_start: 1.0
+epsilon_finish: 0.05
+epsilon_anneal_time: 100000  # 100000 # 50000 for 6h_vs_8z 这个参数会不会有影响，到10Wstep的时候，还让他一直探索？？
+
+#runner: "parallel"
+runner: "episode"
+batch_size_run: 1
+buffer_size: 5000
+batch_size: 64
+optimizer: 'adam'
+
+t_max: 1000000
+
+# update the target network every {} episodes
+target_update_interval: 200
+
+# use the Q_Learner to train
+mac: "n_mac"
+agent: "n_rnn"
+agent_output_type: q
+
+learner: "nq_learner"
+mixer: "vdn"
+mixing_embed_dim: 32
+hypernet_embed: 64
+lr: 0.001 # Learning rate for agents
+td_lambda: 0.6
+optimizer: 'adam'
+q_lambda: False
+
+
+name: "vdn_env" # with "/home/ubuntu/caozhengtao/pymarl2-master-moba3/results/models/vdn_env=hok_easy_savemodel__2023-11-27_03-42-49/70209" # vdn

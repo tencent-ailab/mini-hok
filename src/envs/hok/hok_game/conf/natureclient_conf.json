@@ -1,0 +1,24 @@
+{
+    "game_status": {
+        "error": 0,
+        "win": 1,
+        "fail": 2,
+        "overtime": 3,
+        "running": 4,
+        "pending": 5
+    },
+    "hero_id": {
+        "1": "zhuangzhou",
+        "2": "direnjie",
+        "3": "diaochan",
+        "4": "sunwukong",
+        "5": "caocao"
+    },
+    "config_id": {
+        "zhuangzhou": 11301,
+        "direnjie": 13301,
+        "diaochan": 14101,
+        "sunwukong": 16701,
+        "caocao": 12801
+    }
+}

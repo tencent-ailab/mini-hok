@@ -1,0 +1,40 @@
+syntax = "proto2"; //用于proto3.x编译时兼容proto2.x
+
+import "common.proto";
+import "command.proto";
+
+message SkillSlotState
+{
+  required int32 configId = 1;      //配置ID
+  required SkillSlotType slot_type = 2;  //技能槽
+  required int32 level = 3;        //等级
+  required bool usable = 4;        //能否使用
+  required int32 cooldown = 5;      //CD剩余时长
+  required int32 cooldown_max = 6;    //CD总长
+  optional int32 usedTimes = 7;      //释放次数
+  optional int32 hitHeroTimes = 8;    //命中英雄释放次数
+  required int32 attack_range = 9; // 距离
+}
+
+message SkillState
+{
+  repeated SkillSlotState slot_states = 1;//技能槽状态组
+}
+
+message ProtectInfo      // 护盾信息
+{
+  optional ProtectType protectType = 1;    // 护盾类型
+  optional uint32 protectValue = 2;      // 护盾值
+}
+
+message HeroState
+{
+  optional uint32 actor_id = 1;          // 玩家id
+  required ActorState actor_state = 2;      // 角色状态
+  required SkillState skill_state = 3;      // 技能状态
+  required int32 killCnt = 4;          // 击杀次数
+  required int32 deadCnt = 5;          // 死亡次数
+  required int32 totalHurtToHero = 6;      // 对英雄伤害输出
+  required int32 totalBeHurtByHero = 7;      // 承受英雄伤害
+  repeated ProtectInfo protectInfo = 8;      // 护盾信息
+}
