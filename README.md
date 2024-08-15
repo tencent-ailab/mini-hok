@@ -12,7 +12,7 @@ In the Tencent Multi-Agent Mini Environment, you need to train multiple heroes t
 
 ### Map
 The Honor of Kings Multi-Agent Mini Environment contains agent heroes and wild monsters. The distribution of agent heroes and wild monsters is shown in the figure below, where blue dots represent agent heroes and red dots represent wild monsters. At the beginning of the task, agent heroes and wild monsters will be automatically generated at the designated positions.
-![alt text](./static/img/multi_agent_mini_lv.png')
+![alt text](./static/img/multi_agent_mini_lv.png)
 
 ### Heroes
 | Name | ID | Health | Normal Attack Range | Skill Type 1 | Skill Type 2 | Skill Type 3 |
@@ -143,64 +143,36 @@ Official download link: https://www.docker.com/get-started/
 
 2.1 Open the downloaded installation package and install with the default options checked.
 
-<img
-  src={require('./static/img/docker_install1.png').default}
-  alt="docker_install1" width="50%"
-/>
+![alt text](./static/img/docker_install1.png)
 
 2.2 After the installation is complete, open the Docker Desktop client on the desktop. The first time you run it, you need to click [Accept] to agree to the agreement, then click [Skip] to skip the Docker survey, and then you can start running.
 
-<img
-  src={require('./static/img/docker_install2.png').default}
-  alt="docker_install2" width="50%"
-/>
-<img
-  src={require('./static/img/docker_install3.png').default}
-  alt="docker_install3" width="50%"
-/>
+![alt text](./static/img/docker_install2.png)
+![alt text](./static/img/docker_install3.png)
 
 2.3 Open Docker and wait for a while, you can see in the lower left corner that the Docker status is running, indicating that Docker has started successfully.
 
-<img
-  src={require('./static/img/docker_running.png').default} alt="docker_running" width="50%"
-/>
+![alt text](./static/img/docker_running.png) alt="docker_running" width="50%"
 
 **3. Update WSL 2 Kernel**
 
 If you see the prompt below after running Docker for the first time, you need to update the WSL 2 kernel. Please follow the steps below
 
-<img
-  src={require('./static/img/docker_install4.png').default} alt="docker_install4" width="50%"
-/>
+![alt text](./static/img/docker_install4.png) 
 
 3.1 Visit the website prompted in the pop-up window (for the Chinese page, you can [click here to view](https://docs.microsoft.com/zh-cn/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package)), find step 4 on the opened page, and download the installation package shown below.
-<img
-    src={require('./static/img/wsl-1.png').default}
-    alt="wsl-1" width="50%"
-/>
+  ![alt text](./static/img/wsl-1.png)
 
 3.2 After the download is complete, run the WSL installation package.
-<img
-    src={require('./static/img/wsl-2.png').default}
-    alt="wsl-2" width="50%"
-/>
-<img
-    src={require('./static/img/wsl-3.png').default}
-    alt="wsl-3" width="50%"
-/>
+  ![alt text](./static/img/wsl-2.png)
+  ![alt text](./static/img/wsl-3.png)
 
 3.3 After the installation is complete, click Finish.
-<img
-    src={require('./static/img/wsl-4.png').default}
-    alt="wsl-4" width="50%"
-/>
+  ![alt text](./static/img/wsl-4.png)
 
 3.4 Open the Windows system terminal. You can press the `Windows key + R` combination to open the Run window, enter `cmd` in the Run window and press Enter, and the Windows system terminal will open. (Alternatively, you can search for "Command Prompt" in the search box at the bottom left corner of your computer, and then click the search result to enter the terminal.)
 
-<img
-  src={require('./static/img/wsl-6.png').default}
-  alt="wsl-6" width="40%"
-/>
+![alt text](./static/img/wsl-6.png)
 
 3.5 Set WSL 2 as the default version. Copy the command below, then paste the copied code into the terminal and press Enter. At this point, you will see a message in the terminal indicating that the operation was successful.
 
@@ -208,10 +180,7 @@ If you see the prompt below after running Docker for the first time, you need to
 wsl --set-default-version 2
 ```
 
-<img
-  src={require('./static/img/wsl-8.png').default}
-  alt="wsl-8" width="40%"
-/>
+![alt text](./static/img/wsl-8.png)
 
 3.6 Finally, perform a WSL update. Similarly, enter the command below in the terminal and press Enter to complete the operation. (**Note: This operation must be performed on Windows 11 systems**)
 
@@ -235,15 +204,9 @@ Instructions for use:
 
 > Note that due to the player's requirements for machine-dependent libraries, if a black screen or blue screen appears after downloading and loading, you can try installing the runtime library to fix it. Runtime library path: [Runtime Library Download Address](https://drive.weixin.qq.com/s?k=AJEAIQdfAAoND6j4mw)
 
-<img
-  src={require('./static/img/abs_file.png').default}
-  alt="wsl-8" width="40%"
-/>
+![alt text](./static/img/abs_file.png)
 
-<img
-  src={require('./static/img/abs_scene.png').default}
-  alt="wsl-8" width="40%"
-/>
+![alt text](./static/img/abs_scene.png)
 
 # Algorithms
 
@@ -281,12 +244,12 @@ Instructions for use:
 
 ## Sample Algorithm Experiment Results
 In the sample code, we tried to access VDN, QMIX, QATTEN, and QPLEX, these four cooperative multi-agent reinforcement learning algorithms. The experimental results are as follows:
-<img src={require('./static/img/Episode.png').default} alt="Experimental results" style={{width: '100%'}} />
+![alt text](./static/img/Episode.png)
 As can be seen from the above figure, as the training progresses, the remaining blood volume of the dragon becomes less and less, and the final performance of different algorithms is not consistent, reflecting the comparability of this environment to different algorithms.
 
 We can obtain the abs file under the server `/sgame` path and perform visual analysis through the [ABS Player](#abs-player):
-<img src={require('./static/img/abs_file.png').default} alt="abs player file list" style={{width: '80%'}} />
-<img src={require('./static/img/abs_scene.png').default} alt="abs player" style={{width: '80%'}} />
+![alt text](./static/img/abs_file.png)
+![alt text](./static/img/abs_scene.png)
 
 We found that conventional cooperative multi-agent reinforcement learning can cause the auxiliary Zhuang Zhou not to make efforts to attack the tyrant, which may be due to the lazy agent phenomenon that has always existed in cooperative multi-agent algorithms: since all agents share team rewards, the role of auxiliary Zhuang Zhou is difficult to reflect, resulting in a phenomenon of muddling through.
 
