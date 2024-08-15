@@ -12,7 +12,7 @@ In the Tencent Multi-Agent Mini Environment, you need to train multiple heroes t
 
 ### Map
 The Honor of Kings Multi-Agent Mini Environment contains agent heroes and wild monsters. The distribution of agent heroes and wild monsters is shown in the figure below, where blue dots represent agent heroes and red dots represent wild monsters. At the beginning of the task, agent heroes and wild monsters will be automatically generated at the designated positions.
-<img src={require('./static/img/multi_agent_mini_lv.png').default} alt="Multi-Agent Map" style={{width: '60%'}} />
+![alt text](./static/img/multi_agent_mini_lv.png')
 
 ### Heroes
 | Name | ID | Health | Normal Attack Range | Skill Type 1 | Skill Type 2 | Skill Type 3 |
