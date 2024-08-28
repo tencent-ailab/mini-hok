@@ -34,7 +34,7 @@ The Honor of Kings Multi-Agent Mini Environment contains agent heroes and wild m
   </tr>
 </table>
 
-[Here](https://drive.weixin.qq.com/s?k=AJEAIQdfAAo9hAmOMj) is a video showing different monsters.
+[Here](https://kaiwu-assets-1258344700.file.myqcloud.com/fe-assets/kaiwu-doc/open-competition-2024/multiagent/mini-hok-demo.mp4) is a video showing different monsters.
 
 ---
 
