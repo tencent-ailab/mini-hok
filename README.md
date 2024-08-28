@@ -197,7 +197,7 @@ For more information about WSL 2, please refer to the [Microsoft official docume
 ## ABS Player
 After completing an evaluation task using the model, an ABS recording file will be generated. The ABS playback file can be viewed and visually analyzed using the ABS player provided by Tencent Kaixue.
 
-[ABS Player Download Address](https://drive.weixin.qq.com/s?k=AJEAIQdfAAoqTYk0zp)
+[ABS Player Download Address](https://drive.weixin.qq.com/s?k=AJEAIQdfAAomyhtflp)
 
 Instructions for use:
 1. The current ABS player only supports Windows systems and it is recommended to run it on Windows 10.
