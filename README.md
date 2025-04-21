@@ -8,7 +8,7 @@ In the Tencent Multi-Agent Mini Environment, you need to train multiple heroes t
 
 ## News
 [2025/2]Fixed the issue where Zhuang Zhou's resources were incorrectly loaded and could not respond to actions correctly.
-
+[2025/4]Docker images installation address changes.
 ---
 
 ## Environment Introduction
@@ -58,10 +58,8 @@ After receiving your application information, we will review it as soon as possi
 ### Gamecore Installation
 1. Start Docker and enter the following commands in the command line:
 ```shell   
-  # Log in to the image repository
-  docker login kaiwu.tencentcloudcr.com --username 'tcr$multiagent_public' --password 7GdgM4GIHRICcJf2vAEEIs6QPm9mdm1p
   # Pull the Docker image
-  docker pull kaiwu.tencentcloudcr.com/multiagent_public/gamecore:20250228
+  docker pull tencentailab/marl-mini:gamecore_20250228
   # Check the image ID
   docker images
   # Enter the development container, replace IMAGEID with the ID of the image
@@ -75,7 +73,7 @@ After receiving your application information, we will review it as soon as possi
 1. Start Docker and enter the following commands in the command line:
 ```shell   
   # Pull the Docker image
-  docker pull kaiwu.tencentcloudcr.com/multiagent_public/ai_demo:20240607
+  docker pull tencentailab/marl-mini:20240607
   # Enter the development container, replace IMAGEID with the ID of the image
   docker run -it --name "Demo_Name" IMAGEID /bin/bash
   # Clone the github code
