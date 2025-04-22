@@ -7,8 +7,10 @@ Tencent Multi-Agent Mini Environment is an open environment built based on Honor
 In the Tencent Multi-Agent Mini Environment, you need to train multiple heroes to fight against wild monsters through algorithms. At the end of the task, the remaining health of the wild monsters will be used as the evaluation metric. In the development guide, we have provided examples of how to integrate four algorithms, VDN, QMIX, QATTEN, and QPLEX, into the environment, and showed some experimental results. Finally, example code for VDN is provided in the code package.
 
 ## News
-[2025/2]Fixed the issue where Zhuang Zhou's resources were incorrectly loaded and could not respond to actions correctly.
 [2025/4]Docker images installation address changes.
+
+[2025/2]Fixed the issue where Zhuang Zhou's resources were incorrectly loaded and could not respond to actions correctly.
+
 ---
 
 ## Environment Introduction
