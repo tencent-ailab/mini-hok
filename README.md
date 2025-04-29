@@ -2,7 +2,7 @@
 
 ## Preface
 
-Tencent Multi-Agent Mini Environment is an open environment built based on Honor of Kings, which allows researchers to develop and verify multi-agent algorithms using only local computing power.
+Tencent Multi-Agent Mini Environment is an open environment built based on video game, which allows researchers to develop and verify multi-agent algorithms using only local computing power.
 
 In the Tencent Multi-Agent Mini Environment, you need to train multiple heroes to fight against wild monsters through algorithms. At the end of the task, the remaining health of the wild monsters will be used as the evaluation metric. In the development guide, we have provided examples of how to integrate four algorithms, VDN, QMIX, QATTEN, and QPLEX, into the environment, and showed some experimental results. Finally, example code for VDN is provided in the code package.
 
@@ -16,7 +16,7 @@ In the Tencent Multi-Agent Mini Environment, you need to train multiple heroes t
 ## Environment Introduction
 
 ### Map
-The Honor of Kings Multi-Agent Mini Environment contains agent heroes and wild monsters. The distribution of agent heroes and wild monsters is shown in the figure below, where blue dots represent agent heroes and red dots represent wild monsters. At the beginning of the task, agent heroes and wild monsters will be automatically generated at the designated positions.
+Our Environment contains agent heroes and wild monsters. The distribution of agent heroes and wild monsters is shown in the figure below, where blue dots represent agent heroes and red dots represent wild monsters. At the beginning of the task, agent heroes and wild monsters will be automatically generated at the designated positions.
 ![alt text](./static/img/multi_agent_mini_lv.png)
 
 ### Heroes
@@ -79,9 +79,9 @@ After receiving your application information, we will review it as soon as possi
   # Enter the development container, replace IMAGEID with the ID of the image
   docker run -it --name "Demo_Name" IMAGEID /bin/bash
   # Clone the github code
-  git clone https://github.com/tencent-ailab/mini-hok.git
+  git clone https://github.com/tencent-ailab/marl-hok.git
 ```
-2. Code placement directory: `/home/ubuntu/mini-hok`
+2. Code placement directory: `/home/ubuntu/marl-hok`
 
 ### Environment Startup
 
@@ -116,7 +116,7 @@ vim ./src/envs/hok/hok_game/conf/gamecore_conf.json
 ```
 2. Start the sample code
 ```shell
-cd /home/ubuntu/mini-hok
+cd /home/ubuntu/marl-hok
 python3 src/main.py --config="vdn" --env-config="hok" with "env_args.map_name=hok"
 # Where the --config parameter is followed by the corresponding algorithm, currently supporting the VDN algorithm
 ```
