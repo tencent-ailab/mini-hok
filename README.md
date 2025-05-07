@@ -53,7 +53,7 @@ Our Environment contains agent heroes and wild monsters. The distribution of age
 3. Docker. If Docker is not installed on your computer, please follow the [guide](#docker) to complete the installation.
 
 ### Apply for License
-Please fill out the [Honor of Kings Multi-Agent Minitask Environment License Application Form](https://docs.qq.com/form/page/DVGR3Vk9Jb29lRW9H).
+Please fill out the [Tencent AI Arena Multi-Agent Minitask Environment License Application Form](https://docs.qq.com/form/page/DVGR3Vk9Jb29lRW9H).
 
 After receiving your application information, we will review it as soon as possible. Once approved, you will receive the license file via the email address provided in the application form.
 
